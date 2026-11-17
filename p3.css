@@ -25,3 +25,25 @@ body {
     padding: 0;
     margin: 0;
 }
+
+.footer{
+    background-color: rgb(7, 24, 44);
+    margin: 0;
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+}
+
+.foot{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: space-between;
+    gap: 30px;
+    padding-bottom: 30px; 
+    justify-content: center;
+}
+
+.foot a{
+    text-decoration: none;
+    color: yellow;
+}
