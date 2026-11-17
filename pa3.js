@@ -1,48 +1,27 @@
-const data = {
-  competition: [
-    {
-      name: "Thaipbs",
-      date: "07/07/69",
-      info: "Thaipbs camp in bangkok",
-      image: "thaipbs.JPG",
-    },
-    {
-      name: "Foodabac",
-      date: "17/08/68",
-      info: "Abac future food competition in bangkok",
-      image: "abac.JPG",
-    },
-    {
-      name: "hisoping",
-      date: "25/09/69",
-      info: "taking the picture with hisoping",
-      image: "hisoping.JPG",
-    },
-    {
-      name: "EN",
-      date: "08/11/69",
-      info: "Engineering camp from Chiang Mai University",
-      image: "bn.JPG",
-    },
-    {
-      name: "Photographer",
-      date: "31/10/69",
-      info: "Capture the picture in sport day",
-      image: "photo.JPG",
-    },
-    {
-      name: "vr",
-      date: "13/07/69",
-      info: "Testing playing triple T in META vr",
-      image: "vr.JPG",
-    },
-    {
-      name: "cira",
-      date: "30/11/68",
-      info: "Kmitl GTC Cira Core Camp",
-      image: "cira.JPG",
-    },
-  ],
-};
+const listBody = document.querySelector("#list-body");
+const count = document.querySelector("#count");
 
-const da = document.getElementsByClassName("compitition").innerHTML = data;
+fetch("data.json")
+  .then((response) => response.text())
+  .then((text) => {
+
+    // ---------- Level 1 ----------
+    const da = JSON.parse(text);
+    count.textContent = `${da.length} anime`;
+
+    // ---------- Level 2 + 3 (+ Bonus A) ----------
+    for (const info of da) {
+
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td><img class="cover" src="${image}" alt="${name}"></td>
+        <td class="title">${name}</td>
+        <td class="info">${info}</td>
+        <td class="date">${Date}</td>
+      `;
+    }
+    document.querySelector("#tab-all").addEventListener("click", () => showOnly("all"));
+    document.querySelector("#tab-watching").addEventListener("click", () => showOnly("watching"));
+    document.querySelector("#tab-completed").addEventListener("click", () => showOnly("completed"));
+    document.querySelector("#tab-planned").addEventListener("click", () => showOnly("planned"));
+  });

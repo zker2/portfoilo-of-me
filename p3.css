@@ -47,3 +47,45 @@ body {
     text-decoration: none;
     color: yellow;
 }
+
+/* ---------- the table ---------- */
+.table-wrap { overflow-x: auto; border: 4px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); background: var(--paper); }
+.list-table { width: 100%; border-collapse: collapse; font-size: 16px; }
+.list-table th {
+  font-size: 9px;
+  text-align: left;
+  background: var(--ink);
+  color: var(--yellow);
+  padding: 12px 10px;
+  white-space: nowrap;
+}
+.list-table td { padding: 10px; border-top: 2px solid #e6dfc8; vertical-align: middle; }
+.list-table tbody td:first-child { border-left: 10px solid #d8d2bf; }   /* the status bar */
+.list-table tbody tr:hover { background: #fff3c4; }
+tbody:empty::after {
+  content: "No rows yet… load the JSON and build them!";
+  display: block;
+  padding: 24px;
+  color: var(--muted);
+}
+
+tr.watching td:first-child  { border-left-color: var(--green); }
+tr.completed td:first-child { border-left-color: var(--blue); }
+tr.planned td:first-child   { border-left-color: var(--grey); }
+tr.hidden    { display: none; }
+
+.title { font-weight: 700; }
+.cover {
+  display: block;
+  width: 50px;
+  height: 70px;
+  object-fit: cover;
+  border: 3px solid var(--ink);
+  background: #d8d2bf;      /* shows if the picture can't load */
+  font-size: 10px;          /* the alt text, if the picture can't load */
+}
+.score { font-family: var(--pixel); font-size: 13px; text-align: center; }
+.status { text-transform: capitalize; font-weight: 600; }
+tr.watching .status  { color: var(--green); }
+tr.completed .status { color: var(--blue); }
+tr.planned .status   { color: var(--muted); }
