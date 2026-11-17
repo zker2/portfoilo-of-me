@@ -1,7 +1,48 @@
-fetch("data.json")
-  .then((response) => response.text())
-  .then((text) => {
-    const name1 = JSON.parse(text);
-    name1.textContent = competition.Thaipbs.date
-    console.log(name1)
-  });
+const data = {
+  competition: [
+    {
+      name: "Thaipbs",
+      date: "07/07/69",
+      info: "Thaipbs camp in bangkok",
+      image: "thaipbs.JPG",
+    },
+    {
+      name: "Foodabac",
+      date: "17/08/68",
+      info: "Abac future food competition in bangkok",
+      image: "abac.JPG",
+    },
+    {
+      name: "hisoping",
+      date: "25/09/69",
+      info: "taking the picture with hisoping",
+      image: "hisoping.JPG",
+    },
+    {
+      name: "EN",
+      date: "08/11/69",
+      info: "Engineering camp from Chiang Mai University",
+      image: "bn.JPG",
+    },
+    {
+      name: "Photographer",
+      date: "31/10/69",
+      info: "Capture the picture in sport day",
+      image: "photo.JPG",
+    },
+    {
+      name: "vr",
+      date: "13/07/69",
+      info: "Testing playing triple T in META vr",
+      image: "vr.JPG",
+    },
+    {
+      name: "cira",
+      date: "30/11/68",
+      info: "Kmitl GTC Cira Core Camp",
+      image: "cira.JPG",
+    },
+  ],
+};
+
+const da = document.getElementsByClassName("compitition").innerHTML = data;
