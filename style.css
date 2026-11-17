@@ -37,6 +37,12 @@ img {
   flex-direction: row;
 }
 
+.clock{
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+}
+
 .leftside {
   display: flex;
   flex-direction: column;
