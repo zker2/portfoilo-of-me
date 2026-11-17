@@ -9,7 +9,6 @@
 
 body {
   background-color: #0b1120;
-  margin-top: 15px;
   font-family:
     system-ui,
     -apple-system,
@@ -23,11 +22,14 @@ body {
     "Helvetica Neue",
     sans-serif;
     background-image: linear-gradient(to left, #0f131b, #1a3b70);
+    padding: 0;
+    margin: 0;
 }
 
 img {
   width: 410px;
   border-radius: 5px;
+  margin-top: 15px;
 }
 
 .card {
@@ -54,15 +56,39 @@ img {
   font-size: 20px;
 }
 
-a {
+.footer{
+    background-color: rgb(7, 24, 44);
+    margin: 0;
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+}
+
+.foot{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: space-between;
+    gap: 30px;
+    padding-bottom: 30px; 
+    justify-content: center;
+}
+
+.foot a{
+    text-decoration: none;
+    color: yellow;
+}
+
+.taglink a {
   text-decoration: none;
   background-color: #22d3ee;
   padding: 10px;
   border-radius: 7px;
   margin-top: 10px;
+  transition: all 0.3s;
+
 }
 
-a:hover {
+.taglink a:hover {
   color: white;
   background-color: black;
 }
